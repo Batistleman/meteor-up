@@ -176,6 +176,24 @@ You can use an array to deploy to multiple servers at once.
 
 To deploy to *different* environments (e.g. staging, production, etc.), use separate Meteor Up configurations in separate directories, with each directory containing separate `mup.json` and `settings.json` files, and the `mup.json` files' `app` field pointing back to your app's local directory.
 
+#### Deploying from a git repository
+
+When deploying to production you might want to keep track of what you are deploying exactly. And you might want to roll back to a specific version. You can if you specify mup to deploy from a git repository instead of an app location.
+
+To do this remove the **"app"** variable form your mup configuration and add the following:
+
+    "app_git": {
+        // The remote location of your git repository.
+        "location": "https://github.com/arunoda/meteor-up/",
+        // The branch you want to deploy from
+        "branch":"master",
+        // The tree-ish you want to deploy. (this can be HEAD or a full sha1 like 28e4698b5f714a26669b139613ce0ce47b673ab3, or even the shortcode 28e4698)
+        "version": "HEAD",
+        // The application root might not be the root of the git repository, you can specify it here.
+        "app_root": "./app/"
+    }, 
+
+
 #### Custom Meteor Binary
 
 Sometimes, you might be using `mrt`, or Meteor from a git checkout. By default, Meteor Up uses `meteor`. You can ask Meteor Up to use the correct binary with the `meteorBinary` option.
