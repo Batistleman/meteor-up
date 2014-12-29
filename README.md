@@ -18,6 +18,7 @@ Meteor Up (mup for short) is a command line tool that allows you to deploy any [
 - [Deploying an App](#deploying-an-app)
     - [Deploy Wait Time](#deploy-wait-time)
     - [Multiple Deployment Targets](#multiple-deployment-targets)
+    - [Deploying from a git repository](#deploying-from-a-git-repository)
 - [Access Logs](#access-logs)
 - [Reconfiguring & Restarting](#reconfiguring--restarting)
 - [Accessing the Database](#accessing-the-database)
