@@ -194,6 +194,25 @@ To do this remove the **"app"** variable form your mup configuration and add the
         "app_root": "./app/"
     }, 
 
+Deploying for a git repository also gives you some extra version tools:
+
+This following command gives you the deployed version on your server (by doing a check on the server)
+     
+    mup version server 
+
+This one gives you the version, branch, location and app root in your config.
+
+    mup version config
+
+The history commands returns a list of all your deploys. (these are stored locally in your mup directory in the **.history.json** file.)
+
+    mup version history
+
+The result will be something like: 
+
+    2015-01-03 14:07:14 - 97a250871429749adaddd7390f635e2913420275 (mup version: HEAD branch: master)
+    2015-01-03 14:04:46 - c2e01e3c12893fbd2b8e96a922acc774357fea1e (mup version: HEAD branch: master)
+    2015-01-03 14:00:36 - cc433f8c21200d01068b661db012eae6bb4d24da (mup version: HEAD branch: master)
 
 #### Custom Meteor Binary
 

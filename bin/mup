@@ -31,13 +31,13 @@ if(action == 'init') {
       }
     });
   } else {
-    runActions(config, cwd);
+    runActions(config, cwd, process.argv);
   }
 }
 
 
-function runActions(config, cwd) {
-  var actionsRegistry = new ActionsRegistry(config, cwd);
+function runActions(config, cwd, args) {
+  var actionsRegistry = new ActionsRegistry(config, cwd, args);
   if(actionsRegistry[action]) {
     actionsRegistry[action]();
   } else {
