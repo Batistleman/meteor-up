@@ -181,15 +181,21 @@ To deploy to *different* environments (e.g. staging, production, etc.), use sepa
 
 When deploying to production you might want to keep track of what you are deploying exactly. And you might want to roll back to a specific version. You can if you specify mup to deploy from a git repository instead of an app location.
 
-To do this remove the **"app"** variable form your mup configuration and add the following:
+To do this change the **"app"** object from your mup configuration and add the following:
 
-    "app_git": {
+    "app": {
+        // specify the type of the app configuration.
+        "type":"git"
+
         // The remote location of your git repository.
-        "location": "https://github.com/arunoda/meteor-up/",
+        "repository": "https://github.com/arunoda/meteor-up/",
+
         // The branch you want to deploy from
         "branch":"master",
+        
         // The tree-ish you want to deploy. (this can be HEAD or a full sha1 like 28e4698b5f714a26669b139613ce0ce47b673ab3, or even the shortcode 28e4698)
         "version": "HEAD",
+        
         // The application root might not be the root of the git repository, you can specify it here.
         "app_root": "./app/"
     }, 
